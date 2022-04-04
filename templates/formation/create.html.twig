@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProjetController!
+{% endblock %}
+
+{% block body %}
+
+	<div class="example-wrapper">
+		<h1>Ajouter une formation</h1>
+
+		{{ form_start(formView)}}
+		{{ form_errors(formView)}}
+
+		<div class="row my-5">
+			<div class="col-lg-8 mx-auto">
+				{{ form_row(formView.name)}}
+				{{ form_row(formView.description)}}
+				{{ form_row(formView.startedAt)}}
+				{{ form_row(formView.endedAt)}}
+				<div>
+
+					{{ form_row(formView._token) }}
+					{{ form_errors(formView) }}
+				</div>
+			</div>
+			<div class="text-center">
+				<button type="submit" class="btn btn-outline-primary mt-4">
+					<i class="fas fa-save"></i>
+					{{ submitButtonText ?? "Add" }}</button>
+			</div>
+			{{ form_end(formView,{render_rest: false})}}
+		</div>
+	</div>
+</div>{% endblock %}
